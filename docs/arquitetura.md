@@ -1,20 +1,20 @@
-Arquitetura da SoluÃ§Ã£o â€” LUMI (Sistema Inteligente de Descoberta de Livros)
+Arquitetura da Solução LUMI (Sistema Inteligente de Descoberta de Livros)
 
 ## 1. Fluxo do sistema
 
 ```mermaid
 flowchart TD
-    A[UsuÃ¡rio] --> B{Login / Cadastro}
-    B --> C[Responder questionÃ¡rio de preferÃªncias]
-    C --> D[Sistema de recomendaÃ§Ã£o]
+    A[Usuario] --> B{Login / Cadastro}
+    B --> C[Responder questionário de preferencias]
+    C --> D[Sistema de recomendação]
     D --> E[(Banco de dados de livros)]
     E --> D
     D --> F[Exibir livros recomendados]
-    F --> G[Aluno lÃª o livro]
-    G --> H[Avaliar recomendaÃ§Ã£o]
+    F --> G[Aluno o livro]
+    G --> H[Avaliar recomendação]
     H --> I[(Banco de dados)]
-    I --> J[Atualizar ranking e histÃ³rico]
-    J --> K[BibliotecÃ¡rio acompanha interesses da turma]
+    I --> J[Atualizar ranking e histórico]
+    J --> K[Bibliotecario acompanha interesses da turma]
 ```
 
 ## 2. Arquitetura em camadas
@@ -22,12 +22,12 @@ flowchart TD
 ```mermaid
 graph LR
     Frontend[Frontend - HTML/CSS/JS] --> API[Backend API - Spring Boot]
-    API --> Auth[MÃ³dulo de autenticaÃ§Ã£o]
-    API --> Livros[MÃ³dulo de acervo de livros]
-    API --> Quest[MÃ³dulo de questionÃ¡rio]
-    API --> Rec[MÃ³dulo de recomendaÃ§Ã£o]
-    API --> Aval[MÃ³dulo de avaliaÃ§Ã£o]
-    API --> Painel[MÃ³dulo do bibliotecÃ¡rio]
+    API --> Auth[Módulo de autenticação]
+    API --> Livros[Módulo de acervo de livros]
+    API --> Quest[Módulo de questionario]
+    API --> Rec[Módulo de recomendação]
+    API --> Aval[Módulo de avaliação]
+    API --> Painel[Módulo do bibliotecario]
     Auth --> DB[(Banco de dados MySQL)]
     Livros --> DB
     Quest --> DB
@@ -92,14 +92,14 @@ erDiagram
 
 ## 4. Justificativa das escolhas
 
-- **Frontend em HTML, CSS e JavaScript**: garante uma interface leve e acessÃ­vel, funcionando bem em computadores e dispositivos da biblioteca escolar.
-- **Backend em Java com Spring Boot**: fornece uma estrutura robusta e organizada para lidar com as regras de negÃ³cio do sistema de recomendaÃ§Ã£o.
-- **MÃ³dulo de autenticaÃ§Ã£o**: diferencia o acesso entre aluno, professor, bibliotecÃ¡rio e funcionÃ¡rio, protegendo os dados de login.
-- **MÃ³dulo de acervo de livros**: mantÃ©m o cadastro dos livros com suas caracterÃ­sticas (gÃªnero, tempo de leitura, nÃ­vel de dificuldade, tom, emoÃ§Ã£o transmitida), permitindo cruzamentos mais especÃ­ficos do que uma busca por gÃªnero simples.
-- **MÃ³dulo de questionÃ¡rio**: coleta as preferÃªncias do aluno (tempo disponÃ­vel, humor, tipo de leitura desejada) para alimentar o motor de recomendaÃ§Ã£o.
-- **MÃ³dulo de recomendaÃ§Ã£o**: cruza as respostas do questionÃ¡rio com as caracterÃ­sticas dos livros cadastrados, calculando a compatibilidade e sugerindo os tÃ­tulos mais prÃ³ximos do perfil buscado.
-- **MÃ³dulo de avaliaÃ§Ã£o**: permite que o aluno avalie se a recomendaÃ§Ã£o combinou com o que procurava, gerando dados que ajudam a refinar futuras recomendaÃ§Ãµes.
-- **MÃ³dulo do bibliotecÃ¡rio**: oferece um painel para acompanhar os interesses dos alunos, o ranking dos livros mais recomendados e o histÃ³rico de recomendaÃ§Ãµes, apoiando decisÃµes de acervo.
-- **Banco de dados MySQL**: estrutura relacional adequada para armazenar usuÃ¡rios, livros, respostas, recomendaÃ§Ãµes e avaliaÃ§Ãµes de forma organizada e consultÃ¡vel.
-- **Versionamento com Git e GitHub**: garante controle de versÃµes do cÃ³digo e colaboraÃ§Ã£o entre os desenvolvedores do projeto.
+- **Frontend em HTML, CSS e JavaScript**: garante uma interface leve e acessivel, funcionando bem em computadores e dispositivos da biblioteca escolar.
+- **Backend em Java com Spring Boot**: fornece uma estrutura robusta e organizada para lidar com as regras de negócio do sistema de recomendação.
+- **Módulo de autenticação**: diferencia o acesso entre aluno, professor, bibliotecario e funcionários, protegendo os dados de login.
+- **Módulo de acervo de livros**: mantém o cadastro dos livros com suas caracteristicas (gênero, tempo de leitura, nível de dificuldade, tom, emoção transmitida), permitindo cruzamentos mais específicos do que uma busca por gênero simples.
+- **Módulo de questionário**: coleta as preferências do aluno (tempo disponível, humor, tipo de leitura desejada) para alimentar o motor de recomendação.
+- **Módulo de recomendação**: cruza as respostas do questionário com as características dos livros cadastrados, calculando a compatibilidade e sugerindo os títulos mais próximos do perfil buscado.
+- **Módulo de avaliação**: permite que o aluno avalie se a recomendação combinou com o que procurava, gerando dados que ajudam a refinar futuras recomendações.
+- **Módulo do bibliotecário**: oferece um painel para acompanhar os interesses dos alunos, o ranking dos livros mais recomendados e o histórico de recomendaçôes, apoiando decisões de acervo.
+- **Banco de dados MySQL**: estrutura relacional adequada para armazenar usuários, livros, respostas, recomendações e avaliações de forma organizada e consultavél.
+- **Versionamento com Git e GitHub**: garante controle de versões do código e colaborações entre os desenvolvedores do projeto.
 - **Link para o Trello** https://trello.com/b/shVJDuF9/lumi
