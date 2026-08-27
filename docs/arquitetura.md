@@ -102,4 +102,4 @@ erDiagram
 - **MÃ³dulo do bibliotecÃ¡rio**: oferece um painel para acompanhar os interesses dos alunos, o ranking dos livros mais recomendados e o histÃ³rico de recomendaÃ§Ãµes, apoiando decisÃµes de acervo.
 - **Banco de dados MySQL**: estrutura relacional adequada para armazenar usuÃ¡rios, livros, respostas, recomendaÃ§Ãµes e avaliaÃ§Ãµes de forma organizada e consultÃ¡vel.
 - **Versionamento com Git e GitHub**: garante controle de versÃµes do cÃ³digo e colaboraÃ§Ã£o entre os desenvolvedores do projeto.
-- ** Link para o Trello** https://trello.com/b/shVJDuF9/lumi
+- **Link para o Trello** https://trello.com/b/shVJDuF9/lumi
