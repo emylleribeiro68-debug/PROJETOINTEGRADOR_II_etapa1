@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMI — Descubra Livros</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-container">
+            <h1>📚 LUMI</h1>
+            <nav>
+                <button onclick="mudarAba('inicio')" id="btn-inicio" class="ativo">Início</button>
+                <button onclick="mudarAba('questionario')" id="btn-questionario">Descobrir Livro</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+
+        <!-- ABA INÍCIO (Lista completa de livros com todas as características) -->
+        <section id="aba-inicio" class="aba">
+            <div class="banner">
+                <h2>Encontre sua próxima leitura</h2>
+                <p>Você não precisa saber qual livro quer. O Lumi te ajuda a descobrir o livro ideal para o seu momento.</p>
+                <button class="btn-principal" onclick="mudarAba('questionario')">Fazer o Questionário ✨</button>
+            </div>
+
+            <div class="secao-acervo">
+                <h3>📖 Acervo Completo de Livros</h3>
+                <div id="lista-livros" class="grid-livros">
+                    <!-- Preenchido via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ABA QUESTIONÁRIO (Completo) -->
+        <section id="aba-questionario" class="aba oculto">
+            <div class="card-questionario">
+                <h2>Assistente Inteligente</h2>
+                <p class="subtitulo">Responda às perguntas abaixo para encontrarmos a leitura perfeita para o seu momento.</p>
+                
+                <form onsubmit="processarRecomendacao(event)">
+                    <div class="grupo-form">
+                        <label>1. Quanto tempo você tem para ler?</label>
+                        <select id="q-tempo">
+                            <option value="curto">Curto (Leitura rápida)</option>
+                            <option value="medio">Médio (Alguns dias)</option>
+                            <option value="longo">Longo (História profunda)</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-form">
+                        <label>2. Qual gênero principal você prefere?</label>
+                        <select id="q-genero">
+                            <option value="Fantasia">Fantasia</option>
+                            <option value="Mistério">Mistério</option>
+                            <option value="Romance">Romance</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-form">
+                        <label>3. Qual nível de dificuldade de leitura?</label>
+                        <select id="q-dificuldade">
+                            <option value="Fácil">Fácil e fluído</option>
+                            <option value="Intermediário">Intermediário</option>
+                            <option value="Avançado">Avançado</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-form">
+                        <label>4. Como você quer se sentir?</label>
+                        <select id="q-humor">
+                            <option value="Emocionante">Emocionado / Inspirado</option>
+                            <option value="Curioso">Curioso para desvendar</option>
+                            <option value="Leve">Relaxado</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-principal largura-total">Encontrar Meu Livro Ideal 🚀</button>
+                </form>
+
+                <div id="resultado" class="oculto box-resultado">
+                    <h3>🎯 A combinatória perfeita para você:</h3>
+                    <p id="texto-resultado"></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="codigo.js"></script>
+</body>
+</html>
