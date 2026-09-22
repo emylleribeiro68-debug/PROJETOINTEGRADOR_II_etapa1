@@ -66,3 +66,41 @@ Criar uma biblioteca mais interativa, onde o aluno não precise conhecer o nome 
 O sistema ajudará o aluno a descobrir novas leituras de acordo com aquilo que ele realmente está procurando.
 
 **Você não precisa saber qual livro quer. O sistema ajuda você a descobrir.**
+
+## Como executar o projeto
+
+Não há dependências ou instalação de pacotes — é um site estático simples.
+
+1. Clone o repositório:
+   ```bash
+   git clone <link-do-seu-repositorio>
+   ```
+2. Entre na pasta do projeto e abra o `index.html` diretamente no navegador
+   (duplo clique) **ou**, se preferir usar um servidor local (recomendado para
+   evitar bloqueios de CORS em navegadores mais restritos):
+   ```bash
+   # com a extensão Live Server no VS Code, ou:
+   npx serve .
+   ```
+3. O site abrirá na aba "Início" mostrando o acervo completo.
+
+# RESULTADO FINAL
+
+## Como usar
+
+1. Na tela inicial, clique em **"Fazer o Questionário ✨"** (ou na aba
+   "Descobrir Livro");
+2. Responda as 4 perguntas sobre tempo disponível, gênero, dificuldade e humor;
+3. Clique em **"Encontrar Meu Livro Ideal 🚀"**;
+4. O sistema exibirá o livro recomendado com título, autor e sinopse.
+
+## Resultados desta etapa
+
+O protótipo front-end está funcional e navegável de ponta a ponta, cobrindo o
+fluxo principal de descoberta de livros descrito na proposta do projeto. Os
+testes realizados (ver `/docs/testes.md`) confirmaram o funcionamento da
+navegação, da exibição do acervo e do motor de recomendação, além de
+identificarem pontos de ajuste para as próximas entregas — em especial a
+integração com back-end/banco de dados e o uso completo dos 4 critérios do
+questionário na recomendação.
+
